@@ -26,7 +26,7 @@
 
                 {{-- nama departement --}}
                 <div class="form-group row">
-                    <label for="exampleInputEmail1" class="form-label">Nama Departement</label>
+                    <label for="exampleInputEmail1" class="form-label">Nama Program Studi</label>
                     <input name="departement_name" type="Name" class="form-control @error('departement_name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     @error('departement_name')
                         <span class="invalid-feedback" role="alert">

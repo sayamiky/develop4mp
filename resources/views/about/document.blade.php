@@ -9,16 +9,15 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Tentang</h2>
+            <h2>Tentang Dokumen Mutu</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
-              <li>AUN Program Studi</li>
+              <li>Dokumen Mutu</li>
             </ol>
           </div>
 
         </div>
       </section><!-- End Breadcrumbs -->
-
       <section class="inner-page">
         <div class="container">
             <div class="row">

@@ -13,6 +13,7 @@ use App\Http\Controllers\ViewCertificationController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\P4mpAboutController;
+use App\Http\Controllers\Post\PostByCategoryController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\ViewCertification;
 use App\Http\Controllers\ViewDocumentController;
@@ -94,4 +95,6 @@ Route::get('/about/sambutan', [P4mpAboutController::class, 'indexsambutan'])->na
 Route::get('/about/spmi', [P4mpAboutController::class, 'indexspmi'])->name('indexspmi');
 Route::get('/about/ami', [P4mpAboutController::class, 'indexami'])->name('indexami');
 
+// News 
+Route::get('/news/{slug}', [PostByCategoryController::class, 'newsByCategory'])->name('news');
 Route::get('/download/{url}', [ViewDocumentController::class, 'downloadDocument'])->name('document.download');

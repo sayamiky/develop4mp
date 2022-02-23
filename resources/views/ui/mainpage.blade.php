@@ -95,7 +95,7 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
+    {{-- <div class="footer-top">
       <div class="container">
         <div class="row">
           <div class="col-lg-9 col-md-6 footer-contact">
@@ -113,7 +113,7 @@
 
         </div>
       </div>
-    </div>
+    </div> --}}
 
     <div class="container py-4">
       <div class="copyright">

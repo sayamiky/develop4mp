@@ -47,10 +47,12 @@ class CategoryController extends Controller
             'category_name' => 'required',
             'desc' => 'required',
         ]);
+        
         try {
             Category::create([
                 'category_name' => $request->category_name,
                 'desc' => $request->desc,
+                'slug' => strtolower(str_replace(['/',' '], '', $request->category_name))
             ]);
             return redirect()->route('categories.index');
 

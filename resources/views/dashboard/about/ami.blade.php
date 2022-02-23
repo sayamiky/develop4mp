@@ -9,7 +9,7 @@
            
             <div class="mb-3">
                 <textarea name="content" class="ckeditor" id="wysiwyg" placeholder="Masukan isi post disini" style="height: 100px" required><?= $data['text'] ?></textarea>
-            <button type="submit" class="btn btn-lg w-100 my-2 btn-primary">Tambah</button>
+            <button type="submit" class="btn btn-lg w-100 my-2 btn-primary">Update</button>
           </form>
     </div>
 </div>
