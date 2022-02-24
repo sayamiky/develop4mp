@@ -153,6 +153,7 @@
                         <h6 class="collapse-header">Menu :</h6>
                         <a class="collapse-item" href="{{ url('/sambutan') }}">Sambutan</a>
                         <a class="collapse-item" href="{{ url('/visimisi') }}">Visi Misi</a>
+                        <a class="collapse-item" href="{{ url('/structure') }}">Struktur Organisasi</a>
                         <a class="collapse-item" href="{{ url('/spmi') }}">SPMI</a>
                         <a class="collapse-item" href="{{ url('/ami') }}">AMI</a>
                     </div>

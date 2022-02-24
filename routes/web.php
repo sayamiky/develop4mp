@@ -79,6 +79,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ami', [P4mpAboutController::class, 'ami']);
     Route::post('/ami/add', [P4mpAboutController::class, 'addami'])->name('ami');
 
+    Route::get('/structure', [P4mpAboutController::class, 'structure']);
+    Route::post('/structure/add', [P4mpAboutController::class, 'addstructure'])->name('structure');
+
 });
 
 
@@ -94,6 +97,7 @@ Route::get('/about/visimisi', [P4mpAboutController::class, 'indexvisimisi'])->na
 Route::get('/about/sambutan', [P4mpAboutController::class, 'indexsambutan'])->name('indexsambutan');
 Route::get('/about/spmi', [P4mpAboutController::class, 'indexspmi'])->name('indexspmi');
 Route::get('/about/ami', [P4mpAboutController::class, 'indexami'])->name('indexami');
+Route::get('/about/structure', [P4mpAboutController::class, 'indexstructure'])->name('indexstructure');
 
 // News 
 Route::get('/news/{slug}', [PostByCategoryController::class, 'newsByCategory'])->name('news');

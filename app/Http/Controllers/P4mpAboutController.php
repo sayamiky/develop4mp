@@ -140,4 +140,43 @@ class P4mpAboutController extends Controller
             throw $th;
         }
     }
+
+    public function structure()
+    {
+        $path = Storage::disk('local')->get('public/struktur.json');
+        $data = json_decode($path,true);
+        return view('dashboard.about.structure',compact('data'));
+    }
+
+    public function indexstructure(Request $request)
+    {
+        $path = Storage::disk('local')->get('public/struktur.json');
+        $data = json_decode($path,true);
+        return view('about.structure',compact('data'));
+    }
+
+    public function addstructure(Request $request)
+    {
+        $path = Storage::disk('local')->get('public/struktur.json');
+        $data = json_decode($path,true);
+
+        
+
+        $data['text'] = $request->content;
+        $data['name'] = $request->name;
+        // $file = $request->file('foto');
+
+        // $fileName = 'structure.'.$file->getClientOriginalExtension();
+
+        // $file->move('img',$fileName);
+
+        // $data['img'] = "img/$fileName";
+        try{
+            $newJson = json_encode($data);
+            Storage::disk('local')->put('public/struktur.json',$newJson);
+            return redirect()->back()->with('success','Data Berhasil Diubah');
+        }catch(\Throwable $th){
+            throw $th;
+        }
+    }
 }
