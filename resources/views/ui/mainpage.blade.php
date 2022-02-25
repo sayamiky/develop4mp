@@ -66,7 +66,7 @@
           <li class="dropdown"><a href="#"><span>Akreditasi</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ url('/certificate') }}">Akreditasi Prodi</a></li>
-              <li><a href="#">Akreditasi International</a></li>
+              <li><a href="{{route('international')}}">Akreditasi International</a></li>
             </ul>
           </li>
           {{-- Akreditasi --}}

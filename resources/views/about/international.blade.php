@@ -9,7 +9,7 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Tentang</h2>
+            <h2>Sertifikasi International</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
               <li>AUN Program Studi</li>
@@ -35,10 +35,10 @@
                                         <th scope="col">Jenjang</th>
                                         <th scope="col">Hasil</th>
                                         <th scope="col">Negara</th>
-                                        <th scope="col">Assessment(Awal)</th>
-                                        <th scope="col">Assessment(Akhir)</th>
-                                        <th scope="col">Masa Berlaku(Awal)</th>
-                                        <th scope="col">Masa Berlaku(Akhir)</th>
+                                        <th scope="col">Assessment (Awal)</th>
+                                        <th scope="col">Assessment (Akhir)</th>
+                                        <th scope="col">Masa Berlaku (Awal)</th>
+                                        <th scope="col">Masa Berlaku (Akhir)</th>
                                       </tr>
                                     </thead>
                                     <tbody>

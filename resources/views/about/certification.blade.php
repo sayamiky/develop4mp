@@ -9,7 +9,7 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Sertifikasi</h2>
+            <h2>Sertifikasi Prodi</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
               <li>Akreditasi / Status Akreditasi Program Studi</li>
@@ -31,19 +31,19 @@
                                 <thead>
                                   <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Program Studi</th>
+                                    <th scope="col">Jurusan / Program Studi</th>
                                     <th scope="col">Jenjang</th>
                                     <th scope="col">Lembaga Akreditasi</th>
                                     <th scope="col">Hasil Akreditasi</th>
-                                    <th scope="col">Masa Berlaku(Awal)</th>
-                                    <th scope="col">Masa Berlaku(Akhir)</th>
+                                    <th scope="col">Masa Berlaku (Awal)</th>
+                                    <th scope="col">Masa Berlaku (Akhir)</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   @foreach ($certifications as $certificate)
                                     <tr>
                                       <th scope="row">{{ ++$i }}</th>
-                                      <td>{{ $certificate->departement->faculty->faculty_name }} {{ $certificate->departement->departement_name }}</td>
+                                      <td>{{ $certificate->departement->faculty->faculty_name }} / {{ $certificate->departement->departement_name }}</td>
                                       <td>{{ $certificate->level->level_name }}</td>
                                       <td>{{ $certificate->institution }}</td>
                                       <td>{{ $certificate->result }}</td>

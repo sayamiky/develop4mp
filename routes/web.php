@@ -43,7 +43,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/certificate', [ViewCertificationController::class, 'indexCertification']);
-Route::get('/international', [ViewCertificationController::class, 'indexInternational']);
+Route::get('/international', [ViewCertificationController::class, 'indexInternational'])->name('international');
 Route::get('/document', [ViewDocumentController::class, 'indexDocument']);
 
 
