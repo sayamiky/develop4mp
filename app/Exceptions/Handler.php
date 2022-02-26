@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -37,5 +38,13 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+
+        // $this->renderable(function(Exception $e, $request){
+        //     if ($e instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
+        //         return redirect('/');
+        //     }
+        
+        //     return parent::render($request, $e);
+        // });
     }
 }

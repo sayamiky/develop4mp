@@ -61,11 +61,12 @@
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
         <div class="container" data-aos="fade-up">
-
+            
             <div class="section-title">
                 <h2>Berita</h2>
                 <h3>Berita <span>Terkini</span></h3>
                 <p>Lingkup berita terkini tentang Pendidikan di <span>Politeknik Negeri Bali</span></p>
+                {{-- {{(auth()->user()->hasRole('superadmin'))}} --}}
             </div>
 
             <div class="row">

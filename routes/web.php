@@ -54,7 +54,10 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::resource('categories', CategoryController::class);
-    Route::resource('posts', PostController::class);
+    Route::group(['middleware' => ['role:superadmin']], function () {
+        Route::resource('posts', PostController::class)->except('index');
+    });
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
     Route::resource('faculties', FacultyController::class);
     Route::resource('levels', LevelController::class);
     Route::resource('documents', DocumentController::class);
