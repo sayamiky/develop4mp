@@ -15,6 +15,7 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\P4mpAboutController;
 use App\Http\Controllers\Post\PostByCategoryController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewCertification;
 use App\Http\Controllers\ViewDocumentController;
 use Illuminate\Support\Facades\Auth;
@@ -53,38 +54,40 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard.index');
     })->name('dashboard');
 
-    Route::resource('categories', CategoryController::class);
-    Route::group(['middleware' => ['role:superadmin']], function () {
-        Route::resource('posts', PostController::class)->except('index');
+    Route::group(['middleware' => ['role:superadmin|admin']], function () {
+        Route::resource('categories', CategoryController::class);
+        Route::resource('posts', PostController::class);
+        Route::resource('faculties', FacultyController::class);
+        Route::resource('levels', LevelController::class);
+        Route::resource('documents', DocumentController::class);
+        Route::resource('category_documents', CategoryDocumentController::class);
+        Route::resource('accreditations', AccreditationController::class);
+        Route::resource('results', ResultController::class);
+        Route::resource('departements', DepartementController::class);
+        Route::resource('accreditation_internationals', AccreditationInternationalController::class);
+        Route::resource('abouts', AboutController::class);
+
+        Route::get('/visimisi', [P4mpAboutController::class, 'visimisi']);
+        Route::post('/visimisi/add', [P4mpAboutController::class, 'addvisimisi'])->name('visi-misi');
+
+        Route::get('/sambutan', [P4mpAboutController::class, 'sambutan']);
+        Route::post('/sambutan/add', [P4mpAboutController::class, 'addsambutan'])->name('sambutan');
+
+        Route::get('/spmi', [P4mpAboutController::class, 'spmi']);
+        Route::post('/spmi/add', [P4mpAboutController::class, 'addspmi'])->name('spmi');
+
+        Route::get('/ami', [P4mpAboutController::class, 'ami']);
+        Route::post('/ami/add', [P4mpAboutController::class, 'addami'])->name('ami');
+
+        Route::get('/structure', [P4mpAboutController::class, 'structure']);
+        Route::post('/structure/add', [P4mpAboutController::class, 'addstructure'])->name('structure');
+
     });
-    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-    Route::resource('faculties', FacultyController::class);
-    Route::resource('levels', LevelController::class);
-    Route::resource('documents', DocumentController::class);
-    Route::resource('category_documents', CategoryDocumentController::class);
-    Route::resource('accreditations', AccreditationController::class);
-    Route::resource('results', ResultController::class);
-    Route::resource('departements', DepartementController::class);
-    Route::resource('accreditation_internationals', AccreditationInternationalController::class);
-    Route::resource('abouts', AboutController::class);
 
+    Route::group(['middleware' => ['role:superadmin']], function () {
+        Route::resource('/users', UserController::class);
+    });
     
-
-    Route::get('/visimisi', [P4mpAboutController::class, 'visimisi']);
-    Route::post('/visimisi/add', [P4mpAboutController::class, 'addvisimisi'])->name('visi-misi');
-
-    Route::get('/sambutan', [P4mpAboutController::class, 'sambutan']);
-    Route::post('/sambutan/add', [P4mpAboutController::class, 'addsambutan'])->name('sambutan');
-
-    Route::get('/spmi', [P4mpAboutController::class, 'spmi']);
-    Route::post('/spmi/add', [P4mpAboutController::class, 'addspmi'])->name('spmi');
-
-    Route::get('/ami', [P4mpAboutController::class, 'ami']);
-    Route::post('/ami/add', [P4mpAboutController::class, 'addami'])->name('ami');
-
-    Route::get('/structure', [P4mpAboutController::class, 'structure']);
-    Route::post('/structure/add', [P4mpAboutController::class, 'addstructure'])->name('structure');
-
 });
 
 

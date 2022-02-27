@@ -45,4 +45,22 @@ class User extends Authenticatable
     public function post(){
         return $this->hasMany(Post::class);
     }
+
+    // public function roles()
+    // {
+            // return $this->belongsToMany(
+            //     config('permission.models.role'),
+            //     config('permission.table_names.model_has_roles'),
+            //     'model_id',
+            //     'role_id'
+            // );
+
+            // return $this->belongsToMany(
+            //     config('laravel-permission.models.role'),
+            //     config('laravel-permission.table_names.user_has_roles'),
+            //     'user_id',
+            //     'role_id',
+            //     'user'
+            // );
+    // }
 }

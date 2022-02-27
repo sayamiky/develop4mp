@@ -34,16 +34,10 @@ class RolerSeeder extends Seeder
         // Reset cached roles and permissions
         // app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        // $role = Role::create(['name' => 'superadmin']);
         $permission = Permission::create(['name' => 'publish news']);
 
         $superadmin->givePermissionTo(Permission::all());
-        // $permission->assignRole($role); 
-
-        // $user = User::find(1);
-        // $user->givePermissionTo(Permission::all());
-        // $user->assignRole($role); 
-        
+        $admin->givePermissionTo(Permission::all());
         
     }
 }
