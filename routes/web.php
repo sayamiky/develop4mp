@@ -107,4 +107,7 @@ Route::get('/about/structure', [P4mpAboutController::class, 'indexstructure'])->
 
 // News 
 Route::get('/news/{slug}', [PostByCategoryController::class, 'newsByCategory'])->name('news');
-Route::get('/download/{url}', [ViewDocumentController::class, 'downloadDocument'])->name('document.download');
+
+// Route::group(['middleware' => ['role:superadmin|admin']], function () {
+    Route::get('/download/{url}', [ViewDocumentController::class, 'downloadDocument'])->name('document.download');
+// });

@@ -78,7 +78,9 @@
             </ul>
           </li>
           @if (Auth::check())
-          <a class="nav-link scrollto text-white btn btn-primary px-3 py-1 m-3" href="{{ url('/login') }}"> Dashboard </a>
+            @role('superadmin|admin')
+              <a class="nav-link scrollto text-white btn btn-primary px-3 py-1 m-3" href="{{ url('/login') }}"> Dashboard </a>
+            @endrole
           @else
           <a class="nav-link scrollto text-white btn btn-primary px-3 py-1 m-3" href="{{ url('/login') }}">Login &nbsp;<span class="text-bold ml-2">&#8594;</span> </a>
           @endif

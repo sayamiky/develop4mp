@@ -100,12 +100,12 @@
 
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item">
-                    {{-- <a class="nav-link collapsed" href="{{ route('accreditations.index') }}" data-target="#collapseUtilities"
+                    <a class="nav-link collapsed" href="{{ route('accreditations.index') }}" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-certificate"></i>
                         <span>Akreditasi</span>
-                    </a> --}}
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    </a>
+                    {{-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-certificate"></i>
                         <span>Akreditasi</span>
@@ -117,7 +117,7 @@
                             <a class="collapse-item" href="{{ route('accreditations.index') }}">Program Studi</a>
                             <a class="collapse-item" href="{{ route('accreditation_internationals.index') }}">International</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </li>
 
                 {{-- <!-- Heading -->

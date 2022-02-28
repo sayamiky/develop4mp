@@ -11,6 +11,7 @@ class Accreditation extends Model
     protected $fillable = [
         'id_study',
         'id_level',
+        'category_accreditations',
         'institution',
         'result',
         'start_date',

@@ -23,9 +23,9 @@ class ViewCertificationController extends Controller
     public function indexCertification(Request $request)
     {
         $pagination = 7;
-        $certifications = Accreditation::orderBy('id','desc')->paginate($pagination);
-        $accreditations = Accreditation::orderBy('id','desc')->get();
-        $levels = Accreditation::orderBy('id','desc')->get();
+        $certifications = Accreditation::where('category_accreditations', 'study')->orderBy('id','desc')->paginate($pagination);
+        $accreditations = Accreditation::where('category_accreditations', 'study')->orderBy('id','desc')->get();
+        $levels = Accreditation::where('category_accreditations', 'study')->orderBy('id','desc')->get();
         return view('about.certification',compact('certifications','accreditations','levels'))
         ->with('i', ($request->input('page', 1) - 1) * $pagination);;
     }
@@ -33,7 +33,8 @@ class ViewCertificationController extends Controller
     public function indexInternational(Request $request)
     {
         $pagination = 7;
-        $certifications = AccreditationInternational::orderBy('id','desc')->paginate($pagination);
+        $certifications = Accreditation::where('category_accreditations', 'international')->orderBy('id','desc')->paginate($pagination);
+        // $certifications = AccreditationInternational::orderBy('id','desc')->paginate($pagination);
         return view('about.international',compact('certifications'))
         ->with('i', ($request->input('page', 1) - 1) * $pagination);
     }

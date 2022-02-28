@@ -33,6 +33,15 @@
                     </select>
                 </div>
 
+                <div class="form-group row">
+                    <label for="exampleInputEmail1" class="form-label">Kategori Akreditasi</label>
+                    <select class="form-control mb-3" aria-label="Default select example" name="category_accreditations" required>
+                        <option value="" selected>Pilih Kategori</option>
+                            <option value="study">{{ ucwords('Study') }}</option>
+                            <option value="international">{{ ucwords('International') }}</option>
+                    </select>
+                </div>
+
                 {{-- lembaga akreditasi --}}
                 <div class="form-group row">
                     <label for="exampleInputEmail1" class="form-label">Lembaga Akreditasi</label>

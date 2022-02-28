@@ -55,6 +55,7 @@ class AccreditationController extends Controller
         $request->validate([
             'id_study' => 'required|unique:accreditations,id_study',
             'id_level' => 'required',
+            'category_accreditations' => 'required',
             'institution' => 'required',
             'result' => 'required',
             'start_date' => 'required',
@@ -66,6 +67,7 @@ class AccreditationController extends Controller
             Accreditation::create([
                 'id_study' => $request->id_study,
                 'id_level' => $request->id_level,
+                'category_accreditations' => $request->id_level,
                 'institution' => $request->institution,
                 'result' => $request->result,
                 'start_date' => $request->start_date,
@@ -116,6 +118,7 @@ class AccreditationController extends Controller
             'id_level' => 'required',
             'institution' => 'required',
             'result' => 'required',
+            'category_accreditations' => 'required',
             'start_date' => 'required',
             'end_date' => 'required'
         ]);
@@ -126,6 +129,7 @@ class AccreditationController extends Controller
                 'id_level' => $request->id_level,
                 'institution' => $request->institution,
                 'result' => $request->result,
+                'category_accreditations' => $request->category_accreditations,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
             ]);
