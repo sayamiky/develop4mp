@@ -42,25 +42,61 @@
                                           <td>{{ $document->title }}</td>
                                           <td>{{ $document->categoryDocument->category_name }}</td>
                                           <td>{{ $document->created_at }}</td>
-                                          <td><a class="btn btn-primary btn-sm" href="{{route('document.download',['url' => $document->url_file ])}}">Download</a></td>
+                                          <td><button type="button" class="btn btn-primary btn-sm" id="myBtn">Download</button></td>
+                                          {{-- <td><a class="btn btn-primary btn-sm" href="{{route('document.download',['url' => $document->url_file ])}}">Download</a></td> --}}
                                         </tr>
                                       @endforeach
-
-
                                     </tbody>
                                   </table>
                                   <div class="d-flex justify-content-end">
                                     {{ $documents->links() }}
                                   </div>
                             </div>
-
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
       </section>
-
+        <!-- The Modal -->
+        <div id="unamemodals" class="modalz">
+          <!-- Modal content -->
+          <div class="container">
+            <div class="row">
+              <div class="modalz-content">
+                <span class="closez">&times;</span>
+                <div class="login-wrapper my-auto">
+                  <div style="padding-bottom : 12px;">
+                    {{-- <img src="{{ asset('img/logo.png') }}" alt="" width="300" height="50"> --}}
+                  </div>
+                  <form action="{{route('document.download',['url' => $document->url_file ])}}">
+                    <div class="form-group" id="con_email">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="email@example.com">
+                      @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                      @enderror
+                    </div>
+                    <br>
+                    <div class="form-group mb-4">
+                      <label for="password">Password</label>
+                      <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="enter your passsword">
+                      @error('password')
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+                    </div>
+                    <input name="login" id="login" class="btn btn-primary  login-btn" type="submit" value="Login" style="float: right">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </main><!-- End #main -->
 
 

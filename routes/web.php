@@ -18,6 +18,7 @@ use App\Http\Controllers\ResultController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewCertification;
 use App\Http\Controllers\ViewDocumentController;
+use App\Http\Middleware\EnsureUserCredentials;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -107,7 +108,4 @@ Route::get('/about/structure', [P4mpAboutController::class, 'indexstructure'])->
 
 // News 
 Route::get('/news/{slug}', [PostByCategoryController::class, 'newsByCategory'])->name('news');
-
-// Route::group(['middleware' => ['role:superadmin|admin']], function () {
-    Route::get('/download/{url}', [ViewDocumentController::class, 'downloadDocument'])->name('document.download');
-// });
+Route::get('/download/{url}', [ViewDocumentController::class, 'downloadDocument'])->name('document.download')->middleware('download.document');
