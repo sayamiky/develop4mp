@@ -9,7 +9,7 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Tentang Dokumen Mutu</h2>
+            <h2>Tentang P4MP</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
               <li>Dokumen Mutu</li>
@@ -41,7 +41,7 @@
                                           <th scope="row">{{ ++$i }}</th>
                                           <td>{{ $document->title }}</td>
                                           <td>{{ $document->categoryDocument->category_name }}</td>
-                                          <td>{{ $document->created_at }}</td>
+                                          <td>{{ $document->created_at->format('Y-m-d') }}</td>
                                           <td><button type="button" class="btn btn-primary btn-sm" id="myBtn">Download</button></td>
                                           {{-- <td><a class="btn btn-primary btn-sm" href="{{route('document.download',['url' => $document->url_file ])}}">Download</a></td> --}}
                                         </tr>
@@ -90,7 +90,7 @@
                       </span>
                       @enderror
                     </div>
-                    <input name="login" id="login" class="btn btn-primary  login-btn" type="submit" value="Login" style="float: right">
+                    <input name="login" id="login" class="btn btn-primary  login-btn" type="submit" value="Download File" style="float: right">
                   </form>
                 </div>
               </div>

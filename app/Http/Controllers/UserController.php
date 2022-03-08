@@ -9,7 +9,9 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function __construct(public User $user) {
+    public $user;
+    
+    public function __construct(User $user) {
         $this->user = $user;
     }
     /**
@@ -51,7 +53,8 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|unique:users,email',
             'email' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'password' => 'required'
         ],[
             'email.unique' => "Email sudah digunakan !"
         ]);
@@ -60,7 +63,7 @@ class UserController extends Controller
             $user = $this->user->create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => bcrypt('12345678')
+                'password' => bcrypt($request->password)
             ]);
 
             $user->assignRole($request->input('role'));
@@ -105,7 +108,8 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|unique:users,email',
             'email' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'password' => 'required'
         ],[
             'email.unique' => "Email sudah digunakan !"
         ]);
@@ -114,7 +118,7 @@ class UserController extends Controller
             $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
-                'role' => $request->role
+                'password' => bcrypt($request->password)
             ]);
 
             $user->assignRole($request->input('role'));

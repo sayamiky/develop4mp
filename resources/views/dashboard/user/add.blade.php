@@ -38,6 +38,16 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="password1" class="form-label">Password</label>
+                    <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group row">
                     <button type="submit" class="btn btn-lg btn-primary w-100 mt-3">Tambah</button>
                 </div>
 

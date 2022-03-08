@@ -18,7 +18,7 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Dokumen</th>
+        {{-- <th scope="col">Dokumen</th> --}}
         <th scope="col">Nama dokumen</th>
         <th scope="col">Kategori</th>
         <th scope="col">Deskripsi</th>
@@ -29,7 +29,7 @@
       @foreach ($documents as $document)
       <tr>
         <th scope="row">{{ $loop->iteration }}</th>
-        <td>{{ $document->url_file }}</td>
+        {{-- <td>{{ $document->url_file }}</td> --}}
         <td>{{ $document->title }}</td>
         <td>{{ $document->categoryDocument->category_name }}</td>
         <td>{{ $document->desc }}</td>

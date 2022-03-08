@@ -14,7 +14,7 @@ class AddCategoryAccreditations extends Migration
     public function up()
     {
         Schema::table('accreditations', function (Blueprint $table) {
-            $table->enum('category_accreditations', ['study','international'])->after('id_level');
+            $table->enum('category_accreditations', ['nasional','internasional'])->after('id_level');
         });
     }
 

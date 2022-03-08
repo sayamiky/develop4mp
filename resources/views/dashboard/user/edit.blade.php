@@ -32,6 +32,15 @@
                                     <option value="admin">{{ ucwords('Admin') }}</option>
                                     <option value="user">{{ ucwords('User') }}</option>
                             </select>
+
+                            <label for="password1" class="form-label">Password</label>
+                            <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            
                         <button type="submit" class="btn btn-lg w-100 my-2 btn-success">Simpan</button>
                     <a href="{{ route('users.index') }}"><button type="button" class="btn btn-lg w-100 btn-danger">Kembali</button></a>
                     </div>

@@ -4,7 +4,7 @@
 <section class="breadcrumbs">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Tentang Struktur Organisasi P4MP</h2>
+        <h2>Tentang P4MP</h2>
         <ol>
           <li><a href="index.html">Home</a></li>
           <li><a href="#">Berita</a></li>

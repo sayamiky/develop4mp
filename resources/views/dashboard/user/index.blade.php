@@ -35,6 +35,7 @@
           {{-- <div class="mx-1 my-1">
             <a href="{{ route('users.edit',$user->id) }}" class="btn btn-warning btn-sm">Edit</a>
           </div> --}}
+          @role('superadmin')
           <div class="mx-1 my-1">
             <form action="{{ route('users.destroy',$user->id) }}" method="POST">
                 @csrf
@@ -42,6 +43,7 @@
                 <button type="submit" class="btn btn-sm btn-danger" onclick = "return confirm('Yakin hapus jurusan?')">Hapus</button>
             </form>
           </div>
+          @endrole
         </td>
       </tr>
       @endforeach

@@ -9,7 +9,7 @@
         <div class="container">
   
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Tentang Audit Mutu Internal (AMI)</h2>
+            <h2>Tentang P4MP</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
               <li>AMI</li>
