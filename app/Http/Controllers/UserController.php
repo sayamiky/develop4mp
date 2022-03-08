@@ -22,10 +22,14 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $datas = $this->user->when($request->cari, function($query) use ($request){
-            $query->where('faculty_name','LIKE','%'.$request->cari.'%');
+            $query->where('name','LIKE','%'.$request->cari.'%');
         })->whereHas(
             'roles', function($q){
                 $q->where('name', 'Admin');
+            }
+        )->orWhereHas(
+            'roles', function($q){
+                $q->where('name', 'User');
             }
         )->orderBy('id','desc')->paginate(5);
         $datas->appends($request->only('cari'));
