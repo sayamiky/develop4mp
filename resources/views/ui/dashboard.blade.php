@@ -36,12 +36,12 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
                 <div class="sidebar-brand-text mx-3">P4MP <sup>V1</sup></div>
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            {{-- <hr class="sidebar-divider my-0"> --}}
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
@@ -51,7 +51,7 @@
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            {{-- <hr class="sidebar-divider"> --}}
             @role('superadmin|admin')
                 <!-- Heading -->
                 <div class="sidebar-heading">
@@ -91,7 +91,7 @@
                 </li> --}}
 
                 <!-- Divider -->
-                <hr class="sidebar-divider">
+                {{-- <hr class="sidebar-divider"> --}}
 
                 <!-- Heading -->
                 <div class="sidebar-heading">
@@ -153,7 +153,7 @@
                 </li>
 
                 <!-- Divider -->
-                <hr class="sidebar-divider">
+                {{-- <hr class="sidebar-divider"> --}}
 
                 <!-- Heading -->
                 <div class="sidebar-heading">
