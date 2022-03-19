@@ -54,24 +54,9 @@
             {{-- <hr class="sidebar-divider"> --}}
             @role('superadmin|admin')
                 <!-- Heading -->
-                <div class="sidebar-heading">
+                {{-- <div class="sidebar-heading">
                     Menu Utama
-                </div>
-                <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                        aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-newspaper"></i>
-                        <span>Berita</span>
-                    </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Blog:</h6>
-                            <a class="collapse-item" href="{{ route('posts.index') }}">Berita Baru</a>
-                            <a class="collapse-item" href="{{ route('categories.index') }}">Kategori Berita</a>
-                        </div>
-                    </div>
-                </li>
+                </div> --}}
 
                 {{-- <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -94,8 +79,15 @@
                 {{-- <hr class="sidebar-divider"> --}}
 
                 <!-- Heading -->
-                <div class="sidebar-heading">
+                {{-- <div class="sidebar-heading">
                     Akreditasi
+                </div> --}}
+
+                
+
+                {{-- <!-- Heading -->
+                <div class="sidebar-heading">
+                    Dokumen
                 </div>
 
                 <!-- Nav Item - Utilities Collapse Menu -->
@@ -103,62 +95,16 @@
                     <a class="nav-link collapsed" href="{{ route('accreditations.index') }}" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-certificate"></i>
-                        <span>Akreditasi</span>
+                        <span>Dokumen</span>
                     </a>
-                    {{-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-certificate"></i>
-                        <span>Akreditasi</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Akreditasi:</h6>
-                            <a class="collapse-item" href="{{ route('accreditations.index') }}">Program Studi</a>
-                            <a class="collapse-item" href="{{ route('accreditation_internationals.index') }}">International</a>
-                        </div>
-                    </div> --}}
-                </li>
-
-                {{-- <!-- Heading -->
-                <div class="sidebar-heading">
-                    Dokumen
-                </div>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('accreditations.index') }}" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-certificate"></i>
-                    <span>Dokumen</span>
-                </a>
-            </li> --}}
-
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInstitution"
-                        aria-expanded="true" aria-controls="headingInstitution">
-                        <i class="fas fa-fw fa-university"></i>
-                        <span>Lembaga</span>
-                    </a>
-                    <div id="collapseInstitution" class="collapse" aria-labelledby="headingInstitution"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Lembaga:</h6>
-                            <a class="collapse-item" href="{{ route('faculties.index') }}">Jurusan</a>
-                            <a class="collapse-item" href="{{ route('departements.index') }}">Program Studi</a>
-                            <a class="collapse-item" href="{{ route('levels.index') }}">Jenjang</a>
-                        </div>
-                    </div>
-                </li>
-
+                </li> --}}
                 <!-- Divider -->
                 {{-- <hr class="sidebar-divider"> --}}
 
                 <!-- Heading -->
-                <div class="sidebar-heading">
+                {{-- <div class="sidebar-heading">
                     Menu Utama
-                </div>
+                </div> --}}
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
@@ -195,6 +141,61 @@
                         </div>
                     </div>
                 </li>
+                <!-- Nav Item - Utilities Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInstitution"
+                        aria-expanded="true" aria-controls="headingInstitution">
+                        <i class="fas fa-fw fa-university"></i>
+                        <span>Lembaga</span>
+                    </a>
+                    <div id="collapseInstitution" class="collapse" aria-labelledby="headingInstitution"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Lembaga:</h6>
+                            <a class="collapse-item" href="{{ route('faculties.index') }}">Jurusan</a>
+                            <a class="collapse-item" href="{{ route('departements.index') }}">Program Studi</a>
+                            <a class="collapse-item" href="{{ route('levels.index') }}">Jenjang</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Nav Item - Utilities Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{ route('accreditations.index') }}" data-target="#collapseUtilities"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-fw fa-certificate"></i>
+                        <span>Akreditasi</span>
+                    </a>
+                    {{-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-fw fa-certificate"></i>
+                        <span>Akreditasi</span>
+                    </a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Akreditasi:</h6>
+                            <a class="collapse-item" href="{{ route('accreditations.index') }}">Program Studi</a>
+                            <a class="collapse-item" href="{{ route('accreditation_internationals.index') }}">International</a>
+                        </div>
+                    </div> --}}
+                </li>
+                
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fas fa-fw fa-newspaper"></i>
+                        <span>Berita</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Blog:</h6>
+                            <a class="collapse-item" href="{{ route('posts.index') }}">Berita Baru</a>
+                            <a class="collapse-item" href="{{ route('categories.index') }}">Kategori Berita</a>
+                        </div>
+                    </div>
+                </li>
+                
                 @role('superadmin')
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="{{route('users.index')}}" data-target="#collapseFour"

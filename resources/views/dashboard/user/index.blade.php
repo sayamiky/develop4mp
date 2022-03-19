@@ -20,6 +20,7 @@
         <th scope="col">#</th>
         <th scope="col">Nama</th>
         <th scope="col">Email</th>
+        <th scope="col">Tipe User</th>
         <th scope="col">Tanggal Daftar</th>
         <th scope="col">Aksi</th>
       </tr>
@@ -30,6 +31,7 @@
         <th scope="row">{{ $loop->iteration }}</th>
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
+        <td>{{ $user->roles->first()->name }}</td>
         <td>{{ $user->created_at }}</td>
         <td class="row">
           {{-- <div class="mx-1 my-1">

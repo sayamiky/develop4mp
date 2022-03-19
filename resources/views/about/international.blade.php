@@ -9,10 +9,11 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Sertifikasi International</h2>
+            <h2>Akreditasi International</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
-              <li>AUN Program Studi</li>
+              <li>Akreditasi</li>
+              <li>Akreditasi Internasional</li>
             </ol>
           </div>
 

@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $datas = $this->user->when($request->cari, function($query) use ($request){
+        $datas = $this->user->with('roles')->when($request->cari, function($query) use ($request){
             $query->where('name','LIKE','%'.$request->cari.'%');
         })->whereHas(
             'roles', function($q){

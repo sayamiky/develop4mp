@@ -9,7 +9,7 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Sertifikasi Prodi</h2>
+            <h2>Akreditasi Prodi</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
               <li>Akreditasi / Status Akreditasi Program Studi</li>
