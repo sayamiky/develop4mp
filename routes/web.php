@@ -46,7 +46,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/certificate', [ViewCertificationController::class, 'indexCertification']);
 Route::get('/international', [ViewCertificationController::class, 'indexInternational'])->name('international');
-Route::get('/document', [ViewDocumentController::class, 'indexDocument']);
+Route::get('/document', [ViewDocumentController::class, 'indexDocument'])->name('docs');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -109,3 +109,5 @@ Route::get('/about/structure', [P4mpAboutController::class, 'indexstructure'])->
 // News 
 Route::get('/news/{slug}', [PostByCategoryController::class, 'newsByCategory'])->name('news');
 Route::get('/download/{url}', [ViewDocumentController::class, 'downloadDocument'])->name('document.download')->middleware('download.document');
+
+Route::get('/credentials/{name}', [ViewDocumentController::class, 'credentials'])->name('credentials');

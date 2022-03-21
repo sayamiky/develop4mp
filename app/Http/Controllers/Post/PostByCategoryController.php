@@ -13,7 +13,7 @@ class PostByCategoryController extends Controller
     {
         $datas = Post::with('category')->whereHas('category', function (Builder $query) use ($slug){
             $query->where('slug', $slug);
-        })->get();
+        })->orderBy('id', 'desc')->get();
 
         return view('news.index', compact('datas'));
     }

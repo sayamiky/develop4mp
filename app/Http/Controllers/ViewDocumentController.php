@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Document;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ViewDocumentController extends Controller
 {
@@ -106,5 +107,10 @@ class ViewDocumentController extends Controller
 
 
         // echo $file_path;
+    }
+
+    public function credentials($name)
+    {
+        return view('about.documentcredentials', compact('name'));
     }
 }

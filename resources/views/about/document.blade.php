@@ -31,7 +31,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Nama Dokumen</th>
                                         <th scope="col">Kategori</th>
-                                        <th scope="col">Diuload Pada Tanggal</th>
+                                        <th scope="col">Diupload Pada Tanggal</th>
                                         <th scope="col">Aksi</th>
                                       </tr>
                                     </thead>
@@ -42,7 +42,8 @@
                                           <td>{{ $document->title }}</td>
                                           <td>{{ $document->categoryDocument->category_name }}</td>
                                           <td>{{ $document->created_at->format('Y-m-d') }}</td>
-                                          <td><button type="button" class="btn btn-primary btn-sm" id="myBtn">Download</button></td>
+                                          <td><a class="btn btn-primary btn-sm" href="{{ route('credentials',$document->url_file) }}">Download</a></td>
+                                          
                                           {{-- <td><a class="btn btn-primary btn-sm" href="{{route('document.download',['url' => $document->url_file ])}}">Download</a></td> --}}
                                         </tr>
                                       @endforeach
@@ -52,7 +53,6 @@
                                     {{ $documents->links() }}
                                   </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -68,9 +68,9 @@
                 <span class="closez">&times;</span>
                 <div class="login-wrapper my-auto">
                   <div style="padding-bottom : 12px;">
-                    {{-- <img src="{{ asset('img/logo.png') }}" alt="" width="300" height="50"> --}}
                   </div>
                   <form action="{{route('document.download',['url' => $document->url_file ])}}">
+                    @csrf
                     <div class="form-group" id="con_email">
                       <label for="email">Email</label>
                       <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="email@example.com">
@@ -90,7 +90,7 @@
                       </span>
                       @enderror
                     </div>
-                    <input name="login" id="login" class="btn btn-primary  login-btn" type="submit" value="Download File" style="float: right">
+                    <input class="btn btn-primary  login-btn" type="submit" value="Download File" style="float: right">
                   </form>
                 </div>
               </div>
@@ -98,7 +98,72 @@
           </div>
         </div>
     </main><!-- End #main -->
+    {{-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $('.myBtn').click( async function(e){
+        
+            e.preventDefault();
+            e.stopPropagation();
+            //ini lnknya
+          const link = $(this).data('id');
+           
+          //contoh
+          const base = window.location.origin;
+          
+          //jadi gabungin manual
+          console.log(base+'/document_post/'+link)
 
+          //kyak excel
+          // $.ajax({
+          //       type: "POST",
+          //       url: base+'/document_post/'+link,
+          //       beforeSend: async function(request) {
+          //         //isi auth apa gak
+          //           request.setRequestHeader("Authorization", 'Bearer ' + token);
+          //           await swal.fire({
+          //               title: 'Mohon menunggu',
+          //               showConfirmButton: false,
+          //               allowOutsideClick: false,
+          //               width: 450,
+          //               didOpen: () => {
+          //                   Swal.showLoading()
+          //               }
+          //           });
+          //       },
+          //       xhrFields: {
+          //           responseType: 'blob'
+          //       },
+          //       success: function(result) {
+          //           var blob = result;
+          //           var downloadUrl = URL.createObjectURL(blob);
+          //           var a = document.createElement("a");
+          //           a.href = downloadUrl;
+          //           a.download = link+".pdf";
+          //           document.body.appendChild(a);
+          //           a.click();
+          //           swal.close()
+          //       },
+          //       error: function(result) {
+          //           swal.fire({
+          //               icon: 'error',
+          //               title: 'Oops...',
+          //               text: 'Silahkan Ulang Kembali',
+          //               showConfirmButton: true,
+          //               allowOutsideClick: false,
+          //               width: 450,
 
-</main><!-- End #main -->
+          //           });
+
+          //       }
+          //   })
+          //modallnyee 
+        //   const modal = $('#unamemodals');
+
+        // //link form taruh di action
+        //   modal.find('form').prop('action',link);
+        //   modal.modal('show');
+
+          
+        });
+      </script> --}}
 @endsection
