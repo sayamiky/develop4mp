@@ -111,7 +111,7 @@ class ViewDocumentController extends Controller
 
         if (Auth::check()) {
             // $file_path = public_path('document_post/' . $url);
-             $file_path = '/home/p4mp4/public_html/document_post/'. $url;
+             $file_path = asset('/storage/document_post/'. $url);
             return response()->download($file_path);
         } else {
             return redirect()->route('login');
