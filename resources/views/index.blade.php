@@ -40,7 +40,7 @@
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon"><i class="bx bx-bulb"></i></div>
                         <h4 class="title"><a href="">Mutu</a></h4>
-                        <p class="description">Menjaga mutu pendidikan di lembaga secara berkelanjutan</p>
+                        <p class="description">Menjaga mutu pendidikan lembaga secara berkelanjutan</p>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
             <div class="section-title">
                 <h2>Berita</h2>
                 <h3>Berita <span>Terkini</span></h3>
-                <p>Lingkup berita terkini tentang Pendidikan di <span>Politeknik Negeri Bali</span></p>
+                <p>Lingkup berita terkini tentang P4MP <span>Politeknik Negeri Bali</span></p>
                 {{-- {{(auth()->user()->hasRole('superadmin'))}} --}}
             </div>
 
@@ -96,8 +96,8 @@
 
             <div class="section-title">
                 <h2>Kontak</h2>
-                <h3><span>Hubungi Kami</span></h3>
-                <p>Memiliki Saran atau pertanyaan ? hubungi kami melalui kontak dibawah.</p>
+                <h3>Hubungi <span>Kami</span></h3>
+                <p>Memiliki saran atau pertanyaan? hubungi kami pada kontak berikut</p>
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -105,7 +105,8 @@
                     <div class="info-box mb-4">
                         <i class="bx bx-map"></i>
                         <h3>Alamat Kami</h3>
-                        <p>Jalan Raya Bukit Jimbaran, Bukit Jimbaran, Bali 80232</p>
+                        <p>Jl. Kampus Bukit Jimbaran, Kuta Selatan, Kabupaten Badung <br>
+                        Bali-80364</p>
                     </div>
                 </div>
 
@@ -113,7 +114,8 @@
                     <div class="info-box  mb-4">
                         <i class="bx bx-envelope"></i>
                         <h3>Email</h3>
-                        <p>p4mp@pnb.ac.id</p>
+                        <p>p4mp@pnb.ac.id <br>
+                        &nbsp;</p>
                     </div>
                 </div>
 
@@ -121,7 +123,7 @@
                     <div class="info-box  mb-4">
                         <i class="bx bx-phone-call"></i>
                         <h3>Telepon</h3>
-                        <p>+62 361 701981</p>
+                        <p>+62 361 701981<br>Ext. 117</p>
                     </div>
                 </div>
 

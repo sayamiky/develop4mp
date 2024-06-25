@@ -4,10 +4,10 @@
 <section class="breadcrumbs">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Berita {{$datas->first()->category->category_name}}</h2>
+        <h2>Berita</h2>
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">{{$datas->first()->category->category_name}}</a></li>
+          <li><a href="#">{{$datas->first() == null ? '' : $datas->first()->category->category_name}}</a></li>
         </ol>
       </div>
     </div>
@@ -17,8 +17,8 @@
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Berita</h2>
-            <h3>{{$datas->first()->category->category_name}}</h3>
-            <p>Lingkup berita seputar kegiatan tentang Pendidikan di <span>Politeknik Negeri Bali</span></p>
+            <h3>{{$datas->first() == null ? '' : $datas->first()->category->category_name}}</h3>
+            <p>Lingkup berita seputar kegiatan P4MP Politeknik Negeri Bali</p>
         </div>
         <div class="row">
             @foreach ($datas as $data)
@@ -34,6 +34,11 @@
                 </div>
             </div>
             @endforeach
+        </div>
+        <div style="padding-top: 3%">
+          <div class="d-flex justify-content-center">
+            {{ $datas->links() }}
+          </div>
         </div>
     </div>
 </section>

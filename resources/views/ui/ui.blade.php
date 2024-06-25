@@ -56,10 +56,13 @@
               <li><a href="{{ route('indexsambutan') }}">Sambutan Kepala P4MP</a></li>
               <li><a href="{{ route('indexvisimisi') }}">Visi dan Misi</a></li>
               <li><a href="{{ route('indexstructure') }}">Struktur Organisasi P4MP</a></li>
+             </ul>
+          </li>
+          {{-- AMI and SPmI --}}
+          <li class="dropdown"><a href="#"><span>SPMI & AMI</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
               <li><a href="{{ route('indexspmi') }}">SPMI</a></li>
               <li><a href="{{ route('indexami') }}">AMI</a></li>
-              <li><a href="{{ url('/document') }}">Dokumen Mutu</a></li>
-              
             </ul>
           </li>
           {{-- Akreditasi --}}
@@ -74,6 +77,14 @@
             <ul>
               @foreach (\App\Models\Category::all() as $item)
                 <li><a href="{{route('news',$item->slug)}}"> {{$item->category_name}} </a></li>
+              @endforeach
+            </ul>
+          </li>
+          {{-- Download --}}
+          <li class="dropdown"><a href="#"><span>Download</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              @foreach (\App\Models\CategoryDocument::all() as $item)
+                <li><a href="{{route('documentz',$item->slug)}}"> {{$item->category_name}} </a></li>
               @endforeach
             </ul>
           </li>
@@ -103,9 +114,8 @@
           <div class="col-lg-9 col-md-6 footer-contact">
             <h3>P4MP<span>.</span></h3>
             <p>
-              Jl Raya Bukit Jimbaran <br>
-              Bukit Jimbaran, Bali 80232<br>
-              <strong>Telepon:</strong> +62 361 701981<br>
+              Jl. Kampus Bukit Jimbaran, Kuta Selatan<br>Kabupaten Badung, Bali-80364 <br>
+              <strong>Telepon:</strong> +62 361 701981, Ext. 117<br>
               <strong>Email:</strong> p4mp@pnb.ac.id<br>
             </p>
           </div>

@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 
 class PostByCategoryController extends Controller
 {
-    public function newsByCategory($slug)
+    public function newsByCategory(Request $request, $slug)
     {
+        $pagination = 4;
         $datas = Post::with('category')->whereHas('category', function (Builder $query) use ($slug){
             $query->where('slug', $slug);
-        })->orderBy('id', 'desc')->get();
+        })->orderBy('id', 'desc')->paginate($pagination);
 
-        return view('news.index', compact('datas'));
+        return view('news.index', compact('datas'))->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
 }

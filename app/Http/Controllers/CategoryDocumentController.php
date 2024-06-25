@@ -54,6 +54,7 @@ class CategoryDocumentController extends Controller
         try {
             CategoryDocument::create([
                 'category_name' => $request->category_name,
+                'slug' => strtolower(str_replace(['/',' '], '', $request->category_name)),
                 'desc' => $request->desc,
             ]);
             return redirect()->route('category_documents.index');

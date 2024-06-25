@@ -7,6 +7,11 @@
             @csrf
             @method('PUT')
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+                @if($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        {{ implode('', $errors->all(':message')) }}
+                    </div>
+                @endif
                 <div class="card border-0 shadow-lg" data-aos="flip-right">
                     <img src="{{ asset('foto_post') }}/{{ $post->url_photo }}" class="card-img-top" alt="brt-01" style="height: 400px">
                     <div class="card-body m-3">

@@ -12,7 +12,7 @@
             <h2>Tentang P4MP</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
-              <li>Sambutan</li>
+              <li>Tentang P4MP / Sambutan</li>
             </ol>
           </div>
   

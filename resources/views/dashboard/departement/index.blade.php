@@ -18,8 +18,9 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Nama Prodi</th>
         <th scope="col">Nama Jurusan</th>
-        <th scope="col">Nama Departemen</th>
+        
         <th scope="col">Aksi</th>
       </tr>
     </thead>
@@ -27,8 +28,9 @@
       @foreach ($datas as $item)
       <tr>
         <th scope="row">{{ $loop->iteration }}</th>
-        <td>{{ $item->faculty->faculty_name }}</td>
         <td>{{ $item->departement_name}}</td>
+        <td>{{ $item->faculty->faculty_name }}</td>
+        
         <td class="row">
           <div class="mx-1 my-1">
             <a href="{{ route('departements.edit',$item->id) }}" class="btn btn-warning btn-sm">Edit</a>

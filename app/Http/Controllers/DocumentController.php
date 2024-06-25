@@ -61,7 +61,8 @@ class DocumentController extends Controller
                 'id_category' => $request->id_category,
                 'desc' => $request->desc
             ]);
-            $request->file('url_file')->move(public_path('document_post'),$filename);
+            // $request->file('url_file')->move(public_path('document_post'),$filename);
+            $request->file('url_file')->move('/home/p4mp4/public_html/document_post',$filename);
             return redirect()->route('documents.index');
 
         } catch (\Throwable $th) {
@@ -124,14 +125,15 @@ class DocumentController extends Controller
             }
         }
         else{
-            $filename = date('d_m_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Y-H_i_s').'.'.$request->file('url_file')->getClientOriginalName();
+            $filename = date('d_m_ Y-H_i_s').'.'.$request->file('url_file')->getClientOriginalName();
                 try {
                     $document->update([
                         'url_file' => $filename,
                         'title' => $request->title,
                         'desc' => $request->desc
                     ]);
-                    $request->file('url_file')->move(public_path('document_post'),$filename);
+                    // $request->file('url_file')->move(public_path('document_post'),$filename);
+                     $request->file('url_file')->move('/home/p4mp4/public_html/document_post',$filename);
                     return redirect()->route('documents.index');
 
                 } catch (\Throwable $th) {
@@ -152,7 +154,7 @@ class DocumentController extends Controller
 
             $document->delete();
             // dd($document['url_file']);
-            unlink('document_post/'.$document['url_file']);
+            // unlink('document_post/'.$document['url_file']);
             return redirect()->route('documents.index');
         } catch (\Throwable $th) {
             throw $th;

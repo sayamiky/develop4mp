@@ -61,7 +61,7 @@
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>      
     </form>
-    <p class="text-center"><a href="{{route('docs')}}">Back to home</a></p> 
+    <p class="text-center"><a href="{{route('docs')}}">Kembali ke halaman sebelumnya</a></p> 
 </div>
 </body>
 </html>                                		

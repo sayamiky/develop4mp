@@ -12,7 +12,7 @@
             <h2>Tentang P4MP</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
-              <li>AMI</li>
+              <li>Tentang P4MP / Audit Mutu Internal</li>
             </ol>
           </div>
   
@@ -25,7 +25,7 @@
                 <div class="col-lg-12 col-md-12 mb-5" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 shadow-lg" data-aos="flip-right">
                         <div class="card-body m-3">
-                            <h3 class="card-title">Audit Mutu Internal <span style="font-weight: 600">(AMI)</span></h3>
+                            <h3 class="card-title">Audit Mutu Internal (AMI)</h3>
                             <p class="card-text"><?= $data['text'] ?></p>
                         </div>
                     </div>

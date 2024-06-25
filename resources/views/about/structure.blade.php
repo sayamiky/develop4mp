@@ -7,8 +7,7 @@
         <h2>Tentang P4MP</h2>
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">Berita</a></li>
-          <li>Kegiatan </li>
+          <li>Tentang P4MP / Struktur Organisasi P4MP </li>
         </ol>
       </div>
     </div>

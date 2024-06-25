@@ -9,10 +9,12 @@
         <div class="container">
   
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Detail Berita</h2>
+             {{ ucwords($post->title) }}
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
-              <li>{{ ucwords($post->title) }}</li>
+              <li>Berita / Detail Berita</li>
+             
+              
             </ol>
           </div>
   

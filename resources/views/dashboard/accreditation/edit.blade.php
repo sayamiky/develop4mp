@@ -36,9 +36,14 @@
                 <div class="form-group row">
                     <label for="exampleInputEmail1" class="form-label">Kategori Akreditasi</label>
                     <select class="form-control mb-3" aria-label="Default select example" name="category_accreditations" required>
-                        <option value="" selected>Pilih Kategori</option>
-                            <option value="nasional">{{ ucwords('Nasional') }}</option>
+                        <option>Pilih Kategori</option>
+                        @if ($accreditation_data->category_accreditations == 'nasional') 
+                            <option value="nasional" selected>{{ ucwords('Nasional') }}</option>
                             <option value="internasional">{{ ucwords('Internasional') }}</option>
+                        @else
+                            <option value="nasional">{{ ucwords('Nasional') }}</option>
+                            <option value="internasional" selected>{{ ucwords('Internasional') }}</option>
+                        @endif
                     </select>
                 </div>
 

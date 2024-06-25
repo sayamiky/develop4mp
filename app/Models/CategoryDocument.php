@@ -10,6 +10,7 @@ class CategoryDocument extends Model
     use HasFactory;
     protected $fillable = [
         'category_name',
+        'slug',
         'desc'
     ];
 

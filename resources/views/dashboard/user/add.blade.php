@@ -3,6 +3,11 @@
 @section('content')
 
 <div class="card">
+    @if($errors->any())
+        <div class="alert alert-danger" role="alert">
+            {{ implode('', $errors->all(':message')) }}
+        </div>
+    @endif
     <div class="card-body">
 
         <form action="{{ route('users.store') }}" method="post" >

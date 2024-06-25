@@ -9,7 +9,7 @@
         <div class="container">
 
           <div class="d-flex justify-content-between align-items-center">
-            <h2>Akreditasi International</h2>
+            <h2>Akreditasi</h2>
             <ol>
               <li><a href="{{ route('index') }}">Home</a></li>
               <li>Akreditasi</li>

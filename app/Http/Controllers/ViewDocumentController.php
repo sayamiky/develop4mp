@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Document;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -24,6 +25,17 @@ class ViewDocumentController extends Controller
     {
         $pagination = 7;
         $documents = Document::orderBy('id', 'desc')->paginate($pagination);
+        return view('about.document', compact('documents'))
+            ->with('i', ($request->input('page', 1) - 1) * $pagination);;
+    }
+
+    public function documentBySlug(Request $request, $slug)
+    {
+        $pagination = 7;
+        $documents = Document::with('categoryDocument')->whereHas('categoryDocument', function (Builder $query) use ($slug){
+            $query->where('slug', $slug);
+        })->orderBy('id', 'desc')->paginate($pagination);
+    
         return view('about.document', compact('documents'))
             ->with('i', ($request->input('page', 1) - 1) * $pagination);;
     }
@@ -98,7 +110,8 @@ class ViewDocumentController extends Controller
 
 
         if (Auth::check()) {
-            $file_path = public_path('document_post/' . $url);
+            // $file_path = public_path('document_post/' . $url);
+             $file_path = '/home/p4mp4/public_html/document_post/'. $url;
             return response()->download($file_path);
         } else {
             return redirect()->route('login');
