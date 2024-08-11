@@ -61,8 +61,7 @@ class DocumentController extends Controller
                 'id_category' => $request->id_category,
                 'desc' => $request->desc
             ]);
-            // $request->file('url_file')->move(public_path('document_post'),$filename);
-            $request->file('url_file')->move('/home/p4mp4/public_html/document_post',$filename);
+            $request->file('url_file')->move(public_path('/storage/document_post'),$filename);
             return redirect()->route('documents.index');
 
         } catch (\Throwable $th) {
@@ -132,8 +131,7 @@ class DocumentController extends Controller
                         'title' => $request->title,
                         'desc' => $request->desc
                     ]);
-                    // $request->file('url_file')->move(public_path('document_post'),$filename);
-                     $request->file('url_file')->move('/home/p4mp4/public_html/document_post',$filename);
+                    $request->file('url_file')->move(public_path('/storage/document_post'),$filename);
                     return redirect()->route('documents.index');
 
                 } catch (\Throwable $th) {

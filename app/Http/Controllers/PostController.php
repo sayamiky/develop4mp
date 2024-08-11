@@ -65,8 +65,8 @@ class PostController extends Controller
                 'title' => $request->title,
                 'content' => $request->content
             ]);
-            // $request->file('url_photo')->move(public_path('foto_post'),$nama_foto);
-             $request->file('url_photo')->move('/home/p4mp4/public_html/foto_post',$nama_foto);
+            $request->file('url_photo')->move(public_path('/storage/foto_post'),$nama_foto);
+            //  $request->file('url_photo')->move('/home/p4mp4/public_html/foto_post',$nama_foto);
             return redirect()->route('posts.index');
 
         } catch (\Throwable $th) {
@@ -138,8 +138,8 @@ class PostController extends Controller
                     'title' => $request->title,
                     'content' => $request->content
                 ]);
-                // $request->file('url_photo')->move(public_path('foto_post'),$nama_foto);
-                 $request->file('url_photo')->move('/home/p4mp4/public_html/foto_post',$nama_foto);
+                $request->file('url_photo')->move(public_path('/storage/foto_post'),$nama_foto);
+                //  $request->file('url_photo')->move('/home/p4mp4/public_html/foto_post',$nama_foto);
                 return redirect()->route('posts.index');
     
             } catch (\Throwable $th) {

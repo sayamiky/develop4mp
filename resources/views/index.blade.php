@@ -73,7 +73,7 @@
                 @foreach ($posts as $post)
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 shadow-lg" data-aos="flip-right">
-                        <img src="{{asset('storage/foto_post')}}/{{ $post->url_photo }}" class="card-img-top" alt="brt-01">
+                        <img src="{{asset('/storage/foto_post')}}/{{ $post->url_photo }}" class="card-img-top" alt="brt-01">
                         <div class="card-body m-3">
                             <p class="badge bg-success" style="font-size: 11px" >{{ ucwords($post->category->category_name) }}  </p>
                             <h5 class="card-title">{{ ucwords($post->title) }}</h5>
